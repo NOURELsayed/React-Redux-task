@@ -31,18 +31,22 @@ const Home = ({ Questions }) => {
   }, []);
 
   const handleNext = (e) => {
-    // const rightAnswer = Questions[arrRandom[index]].rightAnswer;
-    if( e.target.value === Questions.rightAnswer){
-      setGrad(+2)
- 
+    if( value === Questions[arrRandom[index]].rightAnswer){
+      
+      setGrad(grad => grad +2)
+      console.log("ur right",value)
     }else{
-      setGrad(-2)
+      setGrad(grad )
+      console.log("ur not right",value)
+
     }
     console.log("grad",grad)
+    console.log(Questions[index].rightAnswer)
+
     if (index < Questions.length - 1) {
       setIndex(index + 1);
     } else {
-      alert("Thank You"&&"ur Gard is" + grad);
+      alert("Thank You" + "  ur Gard is" + grad);
     }
   };
 
